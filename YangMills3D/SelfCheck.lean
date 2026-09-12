@@ -10,6 +10,9 @@ import YangMills3D.Sign
 import YangMills3D.Symbol
 import YangMills3D.Window
 import YangMills3D.Mixture
+import YangMills3D.Decay
+import YangMills3D.Floor
+import YangMills3D.Coarsen
 
 -- ## YangMills3D.Animals — the animal-entropy layer (W24-S)
 #print axioms YangMills3D.card_dirs
@@ -64,3 +67,24 @@ import YangMills3D.Mixture
 #print axioms YangMills3D.w24_assembly
 #print axioms YangMills3D.w24_ceil
 #print axioms YangMills3D.delivered_rate_clears_bar
+
+-- ## YangMills3D.Decay — the W28T-CONV kernel-convexity layer (def UniformDecay)
+#print axioms YangMills3D.uniform_decay_const_mul
+#print axioms YangMills3D.uniform_decay_add
+#print axioms YangMills3D.w28t_conv
+#print axioms YangMills3D.w28t_conv_norm
+
+-- ## YangMills3D.Floor — the W29-FLOOR / W29-DEC count-layer floors
+#print axioms YangMills3D.perimeter_ge_shadows
+#print axioms YangMills3D.xext_le_shadowXZ
+#print axioms YangMills3D.xext_le_shadowXY
+#print axioms YangMills3D.card_shadowYZ_pos
+#print axioms YangMills3D.perimeter_ge_of_xext
+#print axioms YangMills3D.perimeter_ge_of_layers
+#print axioms YangMills3D.perimeter_union
+#print axioms YangMills3D.perimeter_biUnion
+
+-- ## YangMills3D.Coarsen — W26-PAR / W26-CANCEL (def mergeUnder)
+#print axioms YangMills3D.tv_merge_conserved
+#print axioms YangMills3D.z_even_half_abs
+#print axioms YangMills3D.z_even_ratio

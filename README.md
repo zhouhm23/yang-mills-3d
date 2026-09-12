@@ -29,6 +29,16 @@ The certificate layer `YangMills3D/` machine-checks the terminal layer of a
   of the sector mixture) and [CORE-W] (uniform exponential decay of the image
   defect field). They enter the Lean theorem as explicit hypotheses
   (`Mixture.lean`).
+* **Kernel convexity (W28T-CONV)** — the uniform-decay class is closed under
+  convex combination at the same rate `ν` (constant `Σ α_i K_i`): the uniform
+  decay survives every positive disorder resolution (`Decay.lean`).
+* **Shadow-projection floor (W29-FLOOR)** — a cell configuration meeting `e`
+  distinct x-layers has at least `4e + 2` exposed faces (tight: the tube), and
+  boundary additivity over non-contacting components
+  `|∂W| = Σ_i |∂C_i|` (W29-DEC) (`Floor.lean`).
+* **Pairing/parity layer (W26-PAR, W26-CANCEL)** — sign-pure orbit merges
+  conserve TV exactly, and the even/odd split obeys `2·Z_even = Z⁺ + Z` with
+  cancellation factor `Z_even = (Z⁺ + |Z|)/2` (`Coarsen.lean`).
 
 The full 42-line axiom inventory is `YangMills3D/SelfCheck.lean`.
 
