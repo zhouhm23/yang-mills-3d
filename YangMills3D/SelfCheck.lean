@@ -13,6 +13,7 @@ import YangMills3D.Mixture
 import YangMills3D.Decay
 import YangMills3D.Floor
 import YangMills3D.Coarsen
+import YangMills3D.Fan
 
 -- ## YangMills3D.Animals — the animal-entropy layer (W24-S)
 #print axioms YangMills3D.card_dirs
@@ -88,3 +89,18 @@ import YangMills3D.Coarsen
 #print axioms YangMills3D.tv_merge_conserved
 #print axioms YangMills3D.z_even_half_abs
 #print axioms YangMills3D.z_even_ratio
+
+-- ## YangMills3D.Fan — the W30-FLOOR2 / W30-RATE / W30-FORM layer (def l1diam, TailFan)
+#print axioms YangMills3D.span_le_card_image
+#print axioms YangMills3D.perimeter_ge_two_r
+#print axioms YangMills3D.vtxConnected_diagChain
+#print axioms YangMills3D.perimeter_diagChain
+#print axioms YangMills3D.l1diam_diagChain
+#print axioms YangMills3D.w30_floor2_tight
+#print axioms YangMills3D.connecting_perimeter_floor
+#print axioms YangMills3D.connecting_perimeter_floor_real
+#print axioms YangMills3D.nu2_eq_twice
+#print axioms YangMills3D.nu2_le_of_F0_le
+#print axioms YangMills3D.w30_rate_clears_bar
+#print axioms YangMills3D.w30_conditional
+#print axioms YangMills3D.cov_split

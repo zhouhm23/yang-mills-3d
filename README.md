@@ -39,8 +39,24 @@ The certificate layer `YangMills3D/` machine-checks the terminal layer of a
 * **Pairing/parity layer (W26-PAR, W26-CANCEL)** — sign-pure orbit merges
   conserve TV exactly, and the even/odd split obeys `2·Z_even = Z⁺ + Z` with
   cancellation factor `Z_even = (Z⁺ + |Z|)/2` (`Coarsen.lean`).
+* **Diameter–perimeter floor (W30-FLOOR2)** — a vertex-connected cell set
+  with ℓ₁-diameter `r` has at least `2r + 6` exposed faces; TIGHT at the
+  corner chain `(i,i,i)`, `i = 0..m`, whose perimeter is exactly
+  `6(m+1) = 2·(3m) + 6` (`Fan.lean`).  Formalized in the vertex-connected
+  form the chain unions satisfy: the campaign's connectivity-free version
+  is falsified by the two-point set `{0, (r,0,0)}` (perimeter `12 < 2r+6`
+  for `r ≥ 4`) — see the module docstring for the correction.
+* **Doubled connecting rate (W30-RATE) and W30-FORM germ** — a
+  vertex-connected cell set reaching within halo distance 1 of both anchors
+  has perimeter ≥ `2d + 2` at anchor separation `d`, so the W29-EF rate
+  `κ_c − ln F₀ − ε` DOUBLES to `ν = 2(κ_c − ln F₀ − ε)`; at the window
+  bottom `β = 6.618` the [W30-MISS] fan price `F₀ ≤ 6.093` clears the
+  ascent bar `0.493·2.40` (theorem-floor `ν > 1.8002`, machine 2.3510).
+  Includes the exact intra/inter-cluster split
+  `W_p·star(W_p) = Σ_a W_a·star(W_a) + Σ_{a≠b} W_a·star(W_b)` of w30-charge
+  (`Fan.lean`).
 
-The full 42-line axiom inventory is `YangMills3D/SelfCheck.lean`.
+The full 70-line axiom inventory is `YangMills3D/SelfCheck.lean`.
 
 ## Building the formalizations
 
@@ -60,7 +76,7 @@ bash scripts/selfcheck.sh
 
 checks three gates: no `sorry`/`admit`/`native_decide` and no new `axiom`
 declarations anywhere in the library; a cold rebuild from scratch; and that
-all 42 `#print axioms` lines depend only on `propext`, `Classical.choice`,
+all 70 `#print axioms` lines depend only on `propext`, `Classical.choice`,
 `Quot.sound`.
 
 ## License

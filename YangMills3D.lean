@@ -4,7 +4,7 @@ Copyright (c) 2026. AI4Math campaign.
 # YangMills3D: verified components of the 3D mass-gap campaign
 
 This library machine-checks the load-bearing elementary/combinatorial content
-of waves 17-25 of waves 17-29 of the 3D Yang-Mills sub-problem campaign
+of waves 17-30 of the 3D Yang-Mills sub-problem campaign
 (`problems/yang-mills-mass-gap/`, spine `DRAFT-PROOF.md`):
 
 * `YangMills3D.Animals` — the animal-entropy impossibility (W24-S): the
@@ -49,6 +49,14 @@ of waves 17-25 of waves 17-29 of the 3D Yang-Mills sub-problem campaign
   coarsenings (orbit merges) conserve TV exactly (W26-PAR), and the
   even/odd split obeys the exact identity `2·Z_even = Z⁺ + Z` with the
   cancellation-factor form `Z_even = (Z⁺ + |Z|)/2` (W26-CANCEL).
+* `YangMills3D.Fan` — the wave-30 layer: W30-FLOOR2's diameter-perimeter
+  floor `perimeter A ≥ 2·l1diam A + 6` for vertex-connected cell sets
+  (TIGHT: the corner chain `(i,i,i)`, exact perimeter `6(m+1)` and
+  diameter `3m`), W30-RATE's connecting floor `perimeter W ≥ 2d + 2` at
+  anchor separation `d` (the geometric core that DOUBLES the W29-EF
+  rate to `ν = 2(κ_c − ln F₀ − ε)`, with the [W30-MISS] window
+  arithmetic `bar 2.40 < ν` at `β = 6.618` for fan prices `F₀ ≤ 6.093`),
+  and the W30-FORM covariance-split germ.
 * `YangMills3D.SelfCheck` — the axiom inventory: `#print axioms` for every
   main theorem of the library; a passing self-check shows only the three
   standard axioms `[propext, Classical.choice, Quot.sound]`.
@@ -66,4 +74,5 @@ import YangMills3D.Mixture
 import YangMills3D.Decay
 import YangMills3D.Floor
 import YangMills3D.Coarsen
+import YangMills3D.Fan
 import YangMills3D.SelfCheck
