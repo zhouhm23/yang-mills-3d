@@ -20,6 +20,7 @@ import YangMills3D.Budget
 import YangMills3D.Tree
 import YangMills3D.Strip
 import YangMills3D.Ladder
+import YangMills3D.Layers
 
 -- ## YangMills3D.Animals — the animal-entropy layer (W24-S)
 #print axioms YangMills3D.card_dirs
@@ -154,3 +155,21 @@ import YangMills3D.Ladder
 #print axioms YangMills3D.rung_82315
 #print axioms YangMills3D.rung_9
 #print axioms YangMills3D.rung_10
+
+-- ## YangMills3D.Layers — the wave-39/42 layer-identity layer (W39-ID, G28-ID)
+#print axioms YangMills3D.mem_sliceX_iff
+#print axioms YangMills3D.mem_sliceY_iff
+#print axioms YangMills3D.mem_sliceZ_iff
+#print axioms YangMills3D.coareaX
+#print axioms YangMills3D.coareaY
+#print axioms YangMills3D.coareaZ
+#print axioms YangMills3D.wallX_eq_sliceP2_sum
+#print axioms YangMills3D.wallY_eq_sliceP2_sum
+#print axioms YangMills3D.wallZ_eq_sliceP2_sum
+#print axioms YangMills3D.capX_add_capInternalX
+#print axioms YangMills3D.capY_add_capInternalY
+#print axioms YangMills3D.capZ_add_capInternalZ
+#print axioms YangMills3D.sum_wall_eq_twice_perimeter
+#print axioms YangMills3D.wall_min_axis
+#print axioms YangMills3D.sum_cap_eq_perimeter
+#print axioms YangMills3D.cap_min_axis

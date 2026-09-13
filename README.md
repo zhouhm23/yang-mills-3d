@@ -115,7 +115,36 @@ The certificate layer `YangMills3D/` machine-checks the terminal layer of a
   `F₀ ≤ 8 / 4 / 4 / 2` clear `β = 6.618 / 8.2315 / 9 / 10` (weaker
   power-of-two stand-ins for the .md's DP-priced asks 5.1932 / 4.2309
   / 3.7688 / 3.3945) (`Ladder.lean`).
-* The full axiom inventory (now 105 theorems) is `YangMills3D/SelfCheck.lean`.
+* **Wave-39/42 layer identities (W39-ID, G28-ID)** — the axis-layering
+  book, per axis `a ∈ {x, y, z}` of any finite cell set `U` (NO
+  connectivity needed): the coarea identity `|∂U| = H + V` splitting the
+  perimeter into cap faces (normal ∥ the axis) and wall faces
+  (`coareaX/Y/Z`), the exact slice-sum form of the wall count
+  `V = Σ_z P2(S_z)` over the level slices (`wallX_eq_sliceP2_sum` etc.),
+  and the cap budget `H + Σ_z|S_z ∩ S_{z+1}| = 2|U|` — the campaign's
+  `H = 2v − 2Σ_z|S_z ∩ S_{z+1}|` in subtraction-free ℕ form
+  (`capX_add_capInternalX` etc., with the intersection sum read as the
+  ordered double count) (`Layers.lean`).  Sources: `lemmas/w39-dense.md`
+  §1 (Gate-27-exhaustively-confirmed) — a sibling identity to
+  `Budget.w37_ident`.
+* **The G28-ID min-axis identity** — the axis-triple face census:
+  `V_x + V_y + V_z = 2·|∂U|` (`sum_wall_eq_twice_perimeter`; every face
+  has a normal ±e_a for exactly one axis and is a wall for exactly the
+  other two), hence the min-axis bound `min_a V_a ≤ 2|∂U|/3`
+  (`wall_min_axis` — the exact input the min-axis layered book
+  [W42-LAYER] consumes; per the Gate-29 retraction the BOOK did not
+  bank, this identity did, exhaustively confirmed on 27,622 classes),
+  plus the cap-census mirror `H_x + H_y + H_z = |∂U|` and
+  `min_a H_a ≤ |∂U|/3` (`Layers.lean`).
+* **Window re-anchor (Gate-17 item 4, drift D2)** — `Window.lean`'s
+  `mu_0(6.618) = 2.40` citation re-anchored to the honest corner
+  conventions: the interpolated bar `0.493·2.4129 = 1.1896` (exact rate
+  `1.204284`, margin +1.24%), the banked from-below bar
+  `0.493·2.443 = 1.2044` (short by `1.16e-4` on the sliver
+  `β ∈ (6.6178, 6.618]`), and the operative V-gated exact-row rate
+  `3.5607` (`≥ 2.956x` under all conventions).  Theorem statements
+  untouched; citation/docstring fix only.
+* The full axiom inventory (now 119 theorems) is `YangMills3D/SelfCheck.lean`.
 
 ## Building the formalizations
 
@@ -135,7 +164,7 @@ bash scripts/selfcheck.sh
 
 checks three gates: no `sorry`/`admit`/`native_decide` and no new `axiom`
 declarations anywhere in the library; a cold rebuild from scratch; and that
-all 70 `#print axioms` lines depend only on `propext`, `Classical.choice`,
+all 119 `#print axioms` lines depend only on `propext`, `Classical.choice`,
 `Quot.sound`.
 
 ## License

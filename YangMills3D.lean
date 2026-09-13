@@ -77,6 +77,18 @@ of waves 17-30 of the 3D Yang-Mills sub-problem campaign
   Also `Reach`/`ManifoldSurf`/`AdjClosed`: the manifold-surface
   predicate (anchor membership + 4-regularity per W31-REG +
   connectivity).
+* `YangMills3D.Layers` — the wave-39/42 layer-identity layer: [W39-ID]'s
+  coarea identity `|∂U| = H + V` per axis (`coareaX/Y/Z`), with the exact
+  slice-sum form `V = Σ_z P2(S_z)` (`wallX_eq_sliceP2_sum` etc.) and the
+  cap budget `H + Σ_z|S_z ∩ S_{z+1}| = 2|U|` (the campaign's
+  `H = 2v − 2Σ_z|S_z ∩ S_{z+1}|` in subtraction-free form, `Σ_z|S_z ∩
+  S_{z+1}|` read as the ordered double count); and [G28-ID]: the
+  axis-triple identity `V_x + V_y + V_z = 2|∂U|`
+  (`sum_wall_eq_twice_perimeter`) with the min-axis corollary
+  `min_a V_a ≤ 2|∂U|/3` (`wall_min_axis`), plus the cap-census mirror
+  `H_x + H_y + H_z = |∂U|` (`sum_cap_eq_perimeter`) and
+  `min_a H_a ≤ |∂U|/3` (`cap_min_axis`).  Holds for ANY finite cell set
+  (no connectivity) — a sibling of `Budget.w37_ident`.
 * `YangMills3D.SelfCheck` — the axiom inventory: `#print axioms` for every
   main theorem of the library; a passing self-check shows only the three
   standard axioms `[propext, Classical.choice, Quot.sound]`.
@@ -101,4 +113,5 @@ import YangMills3D.Budget
 import YangMills3D.Tree
 import YangMills3D.Strip
 import YangMills3D.Ladder
+import YangMills3D.Layers
 import YangMills3D.SelfCheck
