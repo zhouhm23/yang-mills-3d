@@ -5,11 +5,7 @@ W31-FAN (the manifold-surface fan), Lean form.
 SOURCE. `problems/yang-mills-mass-gap/lemmas/w31-encode.md` §1 (Lemma
 W31-REG: the face graph of a manifold polymer is connected and
 4-regular, hence Eulerian; Theorem W31-FAN: every rooted directed
-Euler circuit is determined by <= 4 · 2 · 3^{n-1} discipline choices —
-the root's start exit (<= 4), the root's middle pass (<= 2), each
-non-root FIRST visit (<= 3: any exit except the entry edge), every
-SECOND visit FORCED (the last unused edge)); the layer is deliberately
-abstract-graph and self-contained.
+Euler circuit is determined by <= 4 · 2 · 3^{n-1} discipline choices).
 
 DELIVERED HERE (all fully proved):
 
@@ -17,28 +13,28 @@ DELIVERED HERE (all fully proved):
     vocabulary.  Edges are the consecutive pairs of a vertex list,
     compared UP TO SWAP (`UndEq`); simplicity is List.Pairwise over the
     traversed pairs; walk-ness carries the F-membership and the
-    edge-level adjacency/nondegeneracy; covers is pair-membership form.
-  * `incCount s D` — the number of edges of a pair list incident to `s`.
+    edge-level adjacency/nondegeneracy.
+  * `incCount s D` — the number of edges of a pair list incident to
+    `s`, with the cons-recursion `incCount_cons`.
   * `card_usedNbrs_eq_incCount` — the COUNTING BRIDGE: for a simple
-    walk, the used neighbors of `s` number exactly the edges of the
-    walk incident to `s` (simplicity makes the "other endpoint" map
-    injective on the incident edges).  This is the W31 analogue of the
+    walk, the used neighbors of a vertex `s` number exactly the edges
+    of the walk incident to `s` (simplicity makes the "other endpoint"
+    map injective on the incident edges) — the wave-31 analogue of the
     wave-29 shadow-projection pigeonhole.
-  * `card_usedNbrs_of_X_eq` — the same bridge for a walk plus an extra
-    pair set `X` with pairwise UndEq-distinct pairs (the form the
-    Euler-existence argument consumes).
+  * `card_usedNbrs_of_X_eq` — the bridge for a walk plus an extra pair
+    set `X` with pairwise UndEq-distinct pairs (the input shape of the
+    splice step of Euler's existence argument).
   * `mem_usedNbrs_union`, `card_used_add_unused` — used/unused
     neighborhood bookkeeping over unions.
 
 STILL PENDING (the remainder of W31-FAN, not formalized here): the
-endpoint-parity lemma (a walk stuck at its last vertex is closed), the
-Euler-existence theorem (maximality + splice), the discipline encoding
-`Enc = (start : nbrs r) × Fin 2 × (F \ {r} → Fin 3)` with its greedy
-decoding and reproduction lemma, and the final count
-`card_closedWalk_le : #closed simple walks at r <= 4 · 2 · 3^{n-1}`.
-The manifold-side wrapper (`YangMills3D.Manifold` in this delivery)
-packages the fan bound CONDITIONALLY on these pending inputs, in the
-named-input style of `Mixture.w24_ceil` / `Fan.w30_conditional`.
+endpoint-parity lemma (for a closed edge-simple walk, incCount = 2
+per vertex; blocks the proof that a stuck walk is closed), Euler's
+existence theorem (maximality + splice on the parity lemma), the
+discipline encoding `Enc = nbrs r × Fin 2 × (F \ {r} → Fin 3)` with
+its greedy decode/reproduction, the count
+`#closed simple walks ≤ 4 · 2 · 3^{n-1}`, and the manifold-side
+wrapper deriving N_manifold(p₀, n) ≤ (8/3)·3ⁿ unconditionally.
 
 Every statement below is fully proved: no unfinished proofs, no new
 axioms.
