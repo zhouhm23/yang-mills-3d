@@ -16,6 +16,10 @@ import YangMills3D.Coarsen
 import YangMills3D.Fan
 import YangMills3D.Euler
 import YangMills3D.Manifold
+import YangMills3D.Budget
+import YangMills3D.Tree
+import YangMills3D.Strip
+import YangMills3D.Ladder
 
 -- ## YangMills3D.Animals — the animal-entropy layer (W24-S)
 #print axioms YangMills3D.card_dirs
@@ -113,3 +117,40 @@ import YangMills3D.Manifold
 #print axioms YangMills3D.mem_usedNbrs_union
 -- ## YangMills3D.Manifold — the manifold/pinched split layer (W31)
 #print axioms YangMills3D.tailFan_split
+
+-- ## YangMills3D.Budget — the W37-IDENT budget-identity layer
+#print axioms YangMills3D.perimeter_eq_faceOut
+#print axioms YangMills3D.faceOut_add_faceCount
+#print axioms YangMills3D.faceCount_swap
+#print axioms YangMills3D.w37_ident
+#print axioms YangMills3D.face_census
+#print axioms YangMills3D.sum_nbIn
+#print axioms YangMills3D.w37_ident_charge
+#print axioms YangMills3D.mem_genBox_iff
+#print axioms YangMills3D.card_genBox
+#print axioms YangMills3D.perimeter_genBox
+#print axioms YangMills3D.perimeter_box_eq
+#print axioms YangMills3D.w37_ident_genBox
+#print axioms YangMills3D.w37_ident_genBox_int
+
+-- ## YangMills3D.Tree — the W37-TREE volume-class layer
+#print axioms YangMills3D.solid_one_eq
+#print axioms YangMills3D.card_dfsShape
+#print axioms YangMills3D.solidClass_card_le
+
+-- ## YangMills3D.Strip — the W36-IDENTITY tilt-0 real-mode layer
+#print axioms YangMills3D.dampr_nonneg
+#print axioms YangMills3D.dampr_le_one
+#print axioms YangMills3D.dampr_mono
+#print axioms YangMills3D.w36_max_norm
+#print axioms YangMills3D.w36_identity
+#print axioms YangMills3D.w36_weakB
+#print axioms YangMills3D.w36_leftmost
+
+-- ## YangMills3D.Ladder — the W37 fan-ask ladder layer
+#print axioms YangMills3D.nu2_needed_iff
+#print axioms YangMills3D.ladder_clears
+#print axioms YangMills3D.rung_bottom
+#print axioms YangMills3D.rung_82315
+#print axioms YangMills3D.rung_9
+#print axioms YangMills3D.rung_10

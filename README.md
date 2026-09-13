@@ -79,7 +79,43 @@ The certificate layer `YangMills3D/` machine-checks the terminal layer of a
   endpoint-parity lemma, Euler's existence theorem, the discipline
   encoding count `4·2·3^{n-1}`, and hence the UNCONDITIONAL form of
   the manifold fan bound.
-* The full 74-line axiom inventory is `YangMills3D/SelfCheck.lean`.
+* **Wave-37 budget identity (W37-IDENT)** — the exact D-book budget:
+  for any finite `B` and `U ⊆ B` (no connectivity), the perimeter
+  excess is the D-interface balance
+  `perimeter U + f_Dout = perimeter B + f_DU` — the subtraction-free
+  ℕ form of `n − 2·S₂ = f_DU − f_Dout` — plus the face census
+  `6·|D| = f_DD + f_DU + f_Dout` and the charge form
+  `|∂U| = |∂B| + Σ(2·nb_in − 6) − f_DD` in ℤ.  Includes the exact box
+  surface `|∂B| = 2·S₂` (`S₂ = ab + bc + ca`, the second-shadow sum;
+  hence `|∂[1,s]³| = 6s²`) and the two-sided face-count bridge
+  `faceCount S T = faceCount T S` (`Budget.lean`).
+* **Wave-37 volume-class bound (W37-TREE)** — the DFS-shape alphabet
+  `DfsShape m` (Dyck excursion × root direction × non-parent ranks)
+  has EXACTLY `Cat_{m−1} · 6 · 5^{m−2}` elements (Mathlib's Dyck
+  words + Catalan), so any finite class of m-cube solids through a
+  root carrying an injective canonical-DFS encoding is bounded by
+  `6·5^{m−2}·Cat_{m−1}` (per-cube rate 20 — the honest replacement of
+  the retracted 5-book); the encoding's injectivity enters as the
+  named input `hdfs` (the `hEuler` style), and the m = 1 corner is
+  exact: the only 1-cube solid through `root` is `{root}`
+  (`Tree.lean`).
+* **Wave-36 tilt-0 real-mode identity (W36-IDENTITY, statement core)** —
+  over the stiffness symbol, the tilt-0 ceiling hypothesis
+  `W p ≤ k̃²(p)/β` (the banked w31-CEILING(a) input) delivers the
+  mass-damped form `W p ≤ ((12 + m²)/β)·k̃²(p)/(k̃²(p) + m²)` at
+  `k̃²_max = 12`, with the damped-ratio facts (nonnegativity, ≤ 1,
+  monotonicity), the weak-B reading at `B ≤ 0.78`, and the leftmost-β
+  arithmetic `β ≥ 22 ∧ m² ≤ 5.16 ⟹ B ≤ 0.78` (`Strip.lean`).  The
+  complex-mode strip remains the campaign's open (G-strip)/(G-H2) gap.
+* **Wave-37 fan-ask ladder** — the exact needed-price formula
+  `bar μ ≤ ν(β) ↔ F₀ ≤ e^{κ_c − bar μ/2 − ε}` (the needed-F0_total
+  column of w37-mid §0), the `w30_conditional`-style window-restoration
+  implication `ladder_clears`, and four numeric rungs at the banked
+  bar corners (μ = 2.443 / 2.397, ε = 0.02): total prices
+  `F₀ ≤ 8 / 4 / 4 / 2` clear `β = 6.618 / 8.2315 / 9 / 10` (weaker
+  power-of-two stand-ins for the .md's DP-priced asks 5.1932 / 4.2309
+  / 3.7688 / 3.3945) (`Ladder.lean`).
+* The full axiom inventory (now 105 theorems) is `YangMills3D/SelfCheck.lean`.
 
 ## Building the formalizations
 

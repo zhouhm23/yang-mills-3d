@@ -97,4 +97,8 @@ import YangMills3D.Coarsen
 import YangMills3D.Fan
 import YangMills3D.Euler
 import YangMills3D.Manifold
+import YangMills3D.Budget
+import YangMills3D.Tree
+import YangMills3D.Strip
+import YangMills3D.Ladder
 import YangMills3D.SelfCheck
