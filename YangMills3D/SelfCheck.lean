@@ -14,6 +14,8 @@ import YangMills3D.Decay
 import YangMills3D.Floor
 import YangMills3D.Coarsen
 import YangMills3D.Fan
+import YangMills3D.Euler
+import YangMills3D.Manifold
 
 -- ## YangMills3D.Animals — the animal-entropy layer (W24-S)
 #print axioms YangMills3D.card_dirs
@@ -104,3 +106,10 @@ import YangMills3D.Fan
 #print axioms YangMills3D.w30_rate_clears_bar
 #print axioms YangMills3D.w30_conditional
 #print axioms YangMills3D.cov_split
+
+-- ## YangMills3D.Euler — the wave-31 walk-counting layer (defs wEdges, WalkOn, Simple)
+#print axioms YangMills3D.card_usedNbrs_eq_incCount
+#print axioms YangMills3D.card_usedNbrs_of_X_eq
+#print axioms YangMills3D.mem_usedNbrs_union
+-- ## YangMills3D.Manifold — the manifold/pinched split layer (W31)
+#print axioms YangMills3D.tailFan_split

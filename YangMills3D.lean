@@ -57,6 +57,26 @@ of waves 17-30 of the 3D Yang-Mills sub-problem campaign
   rate to `ν = 2(κ_c − ln F₀ − ε)`, with the [W30-MISS] window
   arithmetic `bar 2.40 < ν` at `β = 6.618` for fan prices `F₀ ≤ 6.093`),
   and the W30-FORM covariance-split germ.
+* `YangMills3D.Euler` — the wave-31 walk-counting layer toward
+  W31-FAN: the abstract walk vocabulary (`wEdges`, `WalkOn`, `Simple`,
+  `ClosedAt`, `Covers`, `UndEq` up-to-swap edge identity), the
+  used-neighborhood bookkeeping (`usedNbrs`, `unusedNbrs`), and the
+  counting bridge `card_usedNbrs_eq_incCount`: for a simple walk, the
+  used neighbors of `s` number exactly the edges of the walk incident
+  to `s` (simplicity makes the "other endpoint" map injective on the
+  incident edges) — the wave-31 analogue of the wave-29
+  shadow-projection pigeonhole.  `card_usedNbrs_of_X_eq` extends the
+  bridge to a walk plus an extra pair set with pairwise
+  UndEq-distinct pairs.
+* `YangMills3D.Manifold` — the wave-31 manifold/pinched split layer:
+  the [W31-MISS] reduction `tailFan_split` — a tail-fan for the full
+  polymer family at ((8/3) + A) · (max 3 F)ⁿ follows from the DONE
+  manifold half (W31-FAN at F₀ = 3, all n) plus ANY tail-fan for the
+  pinched subclass at (A, F); with a pinched fan at F₀ <= 6.093 this
+  closes [W30-MISS]/[CORE-W] on [6.618, 8.2319) via W29-EF + W30-RATE.
+  Also `Reach`/`ManifoldSurf`/`AdjClosed`: the manifold-surface
+  predicate (anchor membership + 4-regularity per W31-REG +
+  connectivity).
 * `YangMills3D.SelfCheck` — the axiom inventory: `#print axioms` for every
   main theorem of the library; a passing self-check shows only the three
   standard axioms `[propext, Classical.choice, Quot.sound]`.
@@ -75,4 +95,6 @@ import YangMills3D.Decay
 import YangMills3D.Floor
 import YangMills3D.Coarsen
 import YangMills3D.Fan
+import YangMills3D.Euler
+import YangMills3D.Manifold
 import YangMills3D.SelfCheck
